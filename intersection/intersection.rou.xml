@@ -1,0 +1,21 @@
+<routes>
+    <vType id="car" accel="2.6" decel="4.5" length="5" maxSpeed="50"/>
+    <vType id="ambulance" accel="3.0" decel="5.0" length="6" maxSpeed="70" color="1,0,0"/>
+
+    <route id="r_north" edges="N-C C-S"/>
+    <route id="r_south" edges="S-C C-N"/>
+    <route id="r_east" edges="E-C C-W"/>
+    <route id="r_west" edges="W-C C-E"/>
+
+    <!-- Normal Car Flows (High density for congestion) -->
+    <flow id="car_n" type="car" route="r_north" begin="0" end="3600" vehsPerHour="800"/>
+    <flow id="car_s" type="car" route="r_south" begin="0" end="3600" vehsPerHour="800"/>
+    <flow id="car_e" type="car" route="r_east" begin="0" end="3600" vehsPerHour="800"/>
+    <flow id="car_w" type="car" route="r_west" begin="0" end="3600" vehsPerHour="800"/>
+
+    <!-- Ambulance Flows from ALL directions -->
+    <flow id="amb_n" type="ambulance" route="r_north" begin="10" end="3600" vehsPerHour="60"/>
+    <flow id="amb_s" type="ambulance" route="r_south" begin="25" end="3600" vehsPerHour="60"/>
+    <flow id="amb_e" type="ambulance" route="r_east" begin="40" end="3600" vehsPerHour="60"/>
+    <flow id="amb_w" type="ambulance" route="r_west" begin="55" end="3600" vehsPerHour="60"/>
+</routes>
